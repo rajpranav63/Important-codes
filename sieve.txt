@@ -1,0 +1,23 @@
+vi sieve(int n)
+{
+    vi vec(n+1,1);
+    // vi lo(n+1,0);
+    // vi hi(n+1,0);
+    vec[0]=vec[1]=false;
+    vi prime_upto_n;
+    for(int i=2;i<=n;i++)
+    {
+        if(vec[i])
+        {
+            // lo[i]=hi[i]=i;
+            prime_upto_n.pb(i);
+          for(int j=2*i;j<n;j+=i)
+          {
+            vec[j]=false;
+        //         hi[j]=i;
+        //    if(lo[j]==0) lo[j]=i;
+           }
+        }
+    }
+    return vec;
+}
